@@ -7,7 +7,7 @@ from ultralytics import YOLO
 import os
 import cv2
 
-app = Flask(name)
+app = Flask(__name__)
 
 model = YOLO("best.pt")
 
@@ -110,5 +110,6 @@ def index():
         color=color
     )
 
-if name == "main":
+if __name__ == "__main__":
+
     app.run(debug=True)
